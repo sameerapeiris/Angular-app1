@@ -2,3 +2,20 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+app-editpopup{
+    h2{
+        padding: 2rem 3rem 0rem 2rem;
+    }
+    mat-dialog-actions{
+
+        > div{
+            padding: 0rem 2rem 2rem 1rem;
+    display: flex;
+    align-items: flex-end;
+        }
+    }
+    mat-form-field{
+        width: 100%;
+       
+    }
+}

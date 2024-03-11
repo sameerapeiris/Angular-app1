@@ -1,0 +1,30 @@
+<h2 mat-dialog-title>Edit Details</h2>
+<mat-dialog-content>
+  <!-- Add content for your popup -->
+  <form class="form">
+    <mat-form-field class="example-full-width">
+      <mat-label>User Name</mat-label>
+      <input type="userName" matInput placeholder="Email" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput placeholder="Email" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput placeholder="Password" />
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <div class="button-action">
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+    >
+      Edit
+    </button>
+    <button mat-raised-button color="warn">Delete</button>
+  </div>
+</mat-dialog-actions>

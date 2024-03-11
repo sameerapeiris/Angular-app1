@@ -1,16 +1,55 @@
 <app-header></app-header>
-<div class="login-container">
+<div class="table-container">
   <mat-card color="primary">
     <mat-card-header>
-    
+      <mat-card-title>User Details</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-        <div class="landing-container">
-            <div class="grid-item">Grid Item 1</div>
-            <div class="grid-item">Grid Item 2</div>
-            <div class="grid-item">Grid Item 3</div>
-            <!-- Add more grid items as needed -->
-          </div>
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="ID">
+          <th mat-header-cell *matHeaderCellDef>No.</th>
+          <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="User Name">
+          <th mat-header-cell *matHeaderCellDef>User Name</th>
+          <td mat-cell *matCellDef="let element">{{ element.userName }}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="Email">
+          <th mat-header-cell *matHeaderCellDef>Email</th>
+          <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="Action">
+          <th mat-header-cell *matHeaderCellDef>Action</th>
+          <td mat-cell *matCellDef="let element">
+            <div class="button-row">
+              <div class="button-action">
+                <button
+                  mat-raised-button
+                  color="primary"
+                  type="submit"
+                  (click)="openPopup()"
+                >
+                  Edit
+                </button>
+                <button mat-raised-button color="warn">Delete</button>
+              </div>
+            </div>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
     </mat-card-content>
   </mat-card>
 </div>
